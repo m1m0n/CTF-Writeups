@@ -26,7 +26,7 @@ First Of all Let’s do some Recon Stuff to determine What We Actually Have in t
 ![](https://cdn-images-1.medium.com/max/3342/1*4tD7XiFU6gOHBr51WADeyA.png)
 
 Alright, We Can make a Simple Bash Script to get the flag
-```
+```bash
 #!/usr/bin/env bash
 strings pekz.pcap | grep -i “flag{.*}” | cut -d “\”” -f 2
 ```
@@ -39,12 +39,15 @@ In This Challenge We had this GIF file
 ![Scatter](./scatter.gif)
 First Of All we Need to slow down the speed of this GIF to know What We have , You Can Use This [Website](https://ezgif.com/speed) to Change the speed OR Simply you Can Use ***convert*** in linux to convert the GIF to PDF or even PNG
 
-    $convert scatter.gif scatter.pdf # convert to PDF
-    $convert -verbose -coalesce scatter.gif scatter.png # Convert to PNG
-
+```bash
+$convert scatter.gif scatter.pdf # convert to PDF
+$convert -verbose -coalesce scatter.gif scatter.png # Convert to PNG
+```
 OR ***gif2png*** to convert each Frame in GIF to PNG
 
-```$gif2png scatter.gif```
+```bash
+$gif2png scatter.gif
+```
 
 Now We Have this chars
 
@@ -147,7 +150,7 @@ Literally We Didn’t Know What We have To Do, So We Need HINT!
 
 *“This Packets Are a Stream Of **JPEG **Image but, It was Shifted by **ROT13**”*
 
-The Hint is Clear
+The Hint is Clear!
 
 Alright, We Will take this Stream and Decrypt it Using [ROT13](https://rot13.com/)
 
@@ -172,9 +175,9 @@ and The Flag is the md5sum of this Image.
 ***flag{0eed48c187f783159a6ab6dba559d458}***
 
 OR You Can Use ***xxd*** , You Will Get The Same Result
-
-    $xxd -r -p stream file.jpg
-
+```bash
+$xxd -r -p stream file.jpg
+```
 The Funny Part Is We Couldn’t Solve it During the Competition, Because When I Converted This Raw Stream to JPEG it didn’t work as I expected
 It Looks Like That I Made a Mistake , But Anyway It Has Been Solved :D
 
