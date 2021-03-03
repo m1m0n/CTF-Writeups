@@ -36,7 +36,7 @@ strings pekz.pcap | grep -i “flag{.*}” | cut -d “\”” -f 2
 
 In This Challenge We had this GIF file
 
-<iframe src='https://gfycat.com/ifr/FlamboyantSelfassuredDachshund' frameborder='0' scrolling='no' allowfullscreen width='640' height='404'></iframe><p> <a href="https://gfycat.com/flamboyantselfassureddachshund">via Gfycat</a></p>
+![Scatter](./scatter.gif)
 First Of All we Need to slow down the speed of this GIF to know What We have , You Can Use This [Website](https://ezgif.com/speed) to Change the speed OR Simply you Can Use ***convert*** in linux to convert the GIF to PDF or even PNG
 
     $convert scatter.gif scatter.pdf # convert to PDF
